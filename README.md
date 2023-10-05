@@ -1,16 +1,18 @@
-# codeberry_movies_test
-
-A new Flutter project.
+# Codeberry Movies Test
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To set up the environment for the Codeberry Movies Test project, please follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Run the command ```flutter pub get``` to fetch the required dependencies.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Launch the app by running ```flutter run --release```.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## App flux
+Once the app is up and running, you can perform the following actions:
+
+1. Open the app and explore the collection of popular movies.
+
+2. Select a movie to navigate to the details screen, where you can find more information about the selected movie.
+
+Feel free to explore and enjoy the Codeberry Movies Test app!
