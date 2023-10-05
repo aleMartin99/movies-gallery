@@ -18,7 +18,9 @@ class MovieDatasource implements IMovieDatasource {
         },
       );
       if (response.statusCode == 200) {
-        final moviesData = json.decode(response.body) as List<dynamic>;
+        final moviesData =
+            json.decode(response.body)['results'] as List<dynamic>;
+
         return right(
             moviesData.map((movie) => MovieModel.fromJson(movie)).toList());
       } else if (response.statusCode == 501) {
@@ -47,7 +49,7 @@ class MovieDatasource implements IMovieDatasource {
         },
       );
       if (response.statusCode == 200) {
-        final movieData = json.decode(response.body) as dynamic;
+        final movieData = json.decode(response.body) as Map<String, dynamic>;
         return right(MovieDetailsModel.fromJson(movieData));
       } else if (response.statusCode == 501) {
         return left(const InvalidServiceFailure());

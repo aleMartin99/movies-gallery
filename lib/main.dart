@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: theme(),
         title: 'Codeberry-Movies Test',
         home: const HomeScreen(),
