@@ -13,7 +13,7 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
   final GetPopularMoviesUsecase getPopularMovies;
 
   MovieBloc({required this.getPopularMovies}) : super(const MovieState()) {
-    on<MovieEvent>((event, emit) async {
+    on<OnLoadPopularMoviesEvent>((event, emit) async {
       emit(state.copyWith(status: MovieStatus.loading));
 //Thanks to dependency injection I can only call the usecase instance
       final responseGetPopularMovies = await getPopularMovies(NoParams());
