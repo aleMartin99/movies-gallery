@@ -1,7 +1,7 @@
 class MovieModel {
   final String title;
   final String overview;
-  final String id;
+  final int id;
   final String releaseDate;
   final String poster;
   final double voteAverage;
@@ -22,12 +22,12 @@ class MovieModel {
     return MovieModel(
       title: json['title'] ?? '',
       overview: json['overview'] ?? '',
-      id: json['id'] ?? '',
+      id: json['id'] ?? 0,
       poster: json['poster_path'] ?? '',
       releaseDate: json['release_date'] ?? '',
-      voteAverage: json['vote_average'] ?? '',
+      voteAverage: double.tryParse(json['vote_average'].toString()) ?? 0,
       voteCount: json['vote_count'] ?? 0,
-      originalLanguage: json['original_language'] ?? 0,
+      originalLanguage: json['original_language'] ?? '',
     );
   }
 }

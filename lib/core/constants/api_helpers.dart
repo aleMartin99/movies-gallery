@@ -3,3 +3,4 @@ const accessToken =
 const String basePopularMoviesUrl =
     'https://api.themoviedb.org/3/movie/popular';
 const String baseMovieDetailUrl = 'https://api.themoviedb.org/3/movie/';
+const String baseImagelUrl = 'https://image.tmdb.org/t/p/w500/';

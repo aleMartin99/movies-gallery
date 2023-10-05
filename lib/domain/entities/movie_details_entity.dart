@@ -1,7 +1,7 @@
 class MovieDetails {
   final String title;
   final String overview;
-  final String id;
+  final int id;
   final String releaseDate;
   final String poster;
   final double voteAverage;
