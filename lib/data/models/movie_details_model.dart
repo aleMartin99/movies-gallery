@@ -4,6 +4,7 @@ class MovieDetailsModel {
   final int id;
   final String releaseDate;
   final String poster;
+  final String backdrop;
   final double voteAverage;
   final String originalLanguage;
   final String homepage;
@@ -24,6 +25,7 @@ class MovieDetailsModel {
     required this.id,
     required this.releaseDate,
     required this.poster,
+    required this.backdrop,
     required this.voteCount,
     required this.voteAverage,
     required this.originalLanguage,
@@ -45,6 +47,7 @@ class MovieDetailsModel {
       overview: json['overview'] ?? '',
       id: json['id'] ?? '',
       poster: json['poster_path'] ?? '',
+      backdrop: json['backdrop_path'] ?? '',
       releaseDate: json['release_date'] ?? '',
       voteAverage: double.tryParse(json['vote_average'].toString()) ?? 0,
       voteCount: json['vote_count'] ?? 0,

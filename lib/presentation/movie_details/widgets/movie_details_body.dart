@@ -1,13 +1,8 @@
-import 'package:codeberry_movies_test/domain/entities/entities_exports.dart';
-import 'package:codeberry_movies_test/presentation/home/bloc/movie_bloc.dart';
 import 'package:codeberry_movies_test/presentation/movie_details/bloc/movie_details_bloc.dart';
-import 'package:codeberry_movies_test/presentation/movie_details/widgets/movie_description.dart';
-import 'package:codeberry_movies_test/presentation/movie_details/widgets/movies_images.dart';
-import 'package:codeberry_movies_test/presentation/movie_details/widgets/top_rounded_container.dart';
+import 'package:codeberry_movies_test/presentation/movie_details/widgets/widgets_exports.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MovieDetailsBody extends StatefulWidget {
   const MovieDetailsBody({required this.movieId, super.key});
@@ -37,45 +32,42 @@ class _MovieDetailsBodyState extends State<MovieDetailsBody> {
                 height: size.height * 100,
                 child: const Center(child: CupertinoActivityIndicator()))
             : state.status == MovieDetailsStatus.success
-                ? SizedBox(
-                    // height: size.height * 200,
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      children: [
-                        MovieImages(movieDetails: state.details!),
-                        TopRoundedContainer(
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              MovieDescription(
-                                movieDetails: state.details!,
-                              ),
-                              TopRoundedContainer(
-                                color: const Color(0xFFF6F7F9),
-                                child: SizedBox(
-                                  height: size.height * 10,
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, top: 15),
-                                        child: Text(
-                                          state.details!.homepage,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodySmall,
-                                        ),
+                ? ListView(
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      MovieImages(movieDetails: state.details!),
+                      TopRoundedContainer(
+                        color: Colors.white,
+                        child: Column(
+                          children: [
+                            MovieDescription(
+                              movieDetails: state.details!,
+                            ),
+                            TopRoundedContainer(
+                              color: const Color(0xFFF6F7F9),
+                              child: SizedBox(
+                                height: size.height * 10,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, top: 15),
+                                      child: Text(
+                                        state.details!.homepage,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   )
                 : SizedBox(
                     height: size.height * 100,

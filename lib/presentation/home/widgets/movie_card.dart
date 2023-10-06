@@ -46,19 +46,16 @@ class _MovieCardState extends State<MovieCard> {
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Hero(
-                    tag: widget.movie.id.toString(),
-                    child: widget.movie.poster.isEmpty
-                        ? const Placeholder()
-                        : CachedNetworkImage(
-                            fit: BoxFit.cover,
-                            imageUrl: baseImagelUrl + widget.movie.poster,
-                            placeholder: (context, url) =>
-                                const CupertinoActivityIndicator(),
-                            errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
-                          ),
-                  ),
+                  child: widget.movie.poster.isEmpty
+                      ? const Placeholder()
+                      : CachedNetworkImage(
+                          fit: BoxFit.cover,
+                          imageUrl: baseImagelUrl + widget.movie.poster,
+                          placeholder: (context, url) =>
+                              const CupertinoActivityIndicator(),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
                 ),
               ),
               Column(

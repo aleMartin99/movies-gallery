@@ -4,6 +4,7 @@ class MovieDetails {
   final int id;
   final String releaseDate;
   final String poster;
+  final String backdrop;
   final double voteAverage;
   final String originalLanguage;
   final String homepage;
@@ -28,6 +29,7 @@ class MovieDetails {
     required this.voteAverage,
     required this.originalLanguage,
     required this.budget,
+    required this.backdrop,
     required this.genres,
     required this.homepage,
     required this.productionCompanies,

@@ -60,7 +60,8 @@ class MovieRepository implements IMovieRepository {
           status: movieDetailsModel.status,
           tagline: movieDetailsModel.tagline,
           title: movieDetailsModel.title,
-          voteAverage: movieDetailsModel.voteAverage);
+          voteAverage: movieDetailsModel.voteAverage,
+          backdrop: movieDetailsModel.backdrop);
       return right(movieDetails);
     } else {
       return left((response as Left).value);
