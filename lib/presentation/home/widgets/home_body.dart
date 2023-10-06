@@ -1,6 +1,7 @@
 import 'package:codeberry_movies_test/presentation/home/bloc/movie_bloc.dart';
 import 'package:codeberry_movies_test/presentation/home/widgets/movie_card.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBody extends StatefulWidget {
@@ -31,13 +32,25 @@ class _HomeBodyState extends State<HomeBody> {
               : state.status == MovieStatus.success
                   ? Column(
                       children: [
-                        //TODO add header
-                        const SizedBox(
-                          height: 40,
+                        SizedBox(
+                          height: size.height * 2,
+                        ),
+                        SafeArea(
+                          child: Text(
+                            'Popular movies',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(fontSize: 21),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 2,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 20),
+                            horizontal: 20.0,
+                          ),
                           child: GridView.count(
                               padding: const EdgeInsets.symmetric(vertical: 2),
                               clipBehavior: Clip.hardEdge,

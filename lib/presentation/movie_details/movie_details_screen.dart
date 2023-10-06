@@ -1,4 +1,4 @@
-import 'package:codeberry_movies_test/presentation/movie_details/widgets/movie_details_body.dart';
+import 'package:codeberry_movies_test/presentation/movie_details/widgets/widgets_exports.dart';
 import 'package:flutter/material.dart';
 
 class MovieDetailsScreen extends StatefulWidget {
