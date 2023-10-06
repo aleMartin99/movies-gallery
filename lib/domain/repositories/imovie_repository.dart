@@ -4,5 +4,5 @@ import 'package:fpdart/fpdart.dart';
 
 abstract class IMovieRepository {
   Future<Either<Failure, List<Movie>>> getPopularMovies();
-  Future<Either<Failure, MovieDetails>> getMovieDetails(String movieId);
+  Future<Either<Failure, MovieDetails>> getMovieDetails(int movieId);
 }

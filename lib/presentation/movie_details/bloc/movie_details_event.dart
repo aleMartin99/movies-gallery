@@ -4,7 +4,7 @@ sealed class MovieDetailsEvent extends Equatable {}
 
 class OnLoadMovieDetailsEvent extends MovieDetailsEvent {
   OnLoadMovieDetailsEvent({required this.movieId});
-  final String movieId;
+  final int movieId;
   @override
   List<Object> get props => [movieId];
 }

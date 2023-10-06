@@ -1,7 +1,8 @@
 import 'package:codeberry_movies_test/core/injection_container/init_core.dart';
+import 'package:codeberry_movies_test/core/router/app_router.dart';
+import 'package:codeberry_movies_test/core/router/routes.dart';
 import 'package:codeberry_movies_test/core/theme/theme.dart';
 import 'package:codeberry_movies_test/presentation/home/bloc/movie_bloc.dart';
-import 'package:codeberry_movies_test/presentation/home/home_screen.dart';
 import 'package:codeberry_movies_test/presentation/movie_details/bloc/movie_details_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,10 +31,12 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        home: const AppRouter(),
+        onGenerateRoute: AppRouter.generateRoute,
+        initialRoute: AppRoutes.homeRoute,
         debugShowCheckedModeBanner: false,
         theme: theme(),
         title: 'Codeberry-Movies Test',
-        home: const HomeScreen(),
       ),
     );
   }

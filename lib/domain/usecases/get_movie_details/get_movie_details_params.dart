@@ -1,4 +1,4 @@
 class GetMovieDetailsParams {
-  String movieId;
+  int movieId;
   GetMovieDetailsParams({required this.movieId});
 }

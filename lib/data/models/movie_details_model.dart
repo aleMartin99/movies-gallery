@@ -50,10 +50,17 @@ class MovieDetailsModel {
       voteCount: json['vote_count'] ?? 0,
       originalLanguage: json['original_language'] ?? 0,
       budget: json['budget'] ?? 0,
-      genres: json['genres']['name'] ?? '',
-      productionCompanies: json['production_companies']['name'] ?? '',
-      productionCountries: json['production_countries']['name'] ?? '',
-      spokenLanguages: json['spoken_languages']['english_name'] ?? '',
+      genres:
+          (json['genres'] as List).map((e) => e['name'].toString()).toList(),
+      productionCompanies: (json['production_companies'] as List)
+          .map((e) => e['name'].toString())
+          .toList(),
+      productionCountries: (json['production_countries'] as List)
+          .map((e) => e['name'].toString())
+          .toList(),
+      spokenLanguages: (json['spoken_languages'] as List)
+          .map((e) => e['english_name'].toString())
+          .toList(),
       revenue: json['revenue'] ?? 0,
       homepage: json['homepage'] ?? '',
       tagline: json['tagline'] ?? '',
