@@ -8,7 +8,7 @@ class GetMovieDetailsUsecase
     extends UseCase<MovieDetails, GetMovieDetailsParams> {
   GetMovieDetailsUsecase({required this.getMovieDetails});
 
-  final Future<Either<Failure, MovieDetails>> Function(String movieId)
+  final Future<Either<Failure, MovieDetails>> Function(int movieId)
       getMovieDetails;
 
   @override

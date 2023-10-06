@@ -17,7 +17,6 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: MovieDetailsBody(movieId: widget.movieId),
     );
   }

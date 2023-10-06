@@ -39,7 +39,7 @@ class MovieDatasource implements IMovieDatasource {
 
   @override
   Future<Either<Failure, MovieDetailsModel>> getMovieDetails(
-      String movieId) async {
+      int movieId) async {
     try {
       final response = await http.get(
         Uri.parse('$baseMovieDetailUrl$movieId'),

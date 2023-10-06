@@ -15,7 +15,7 @@ class MovieRepository implements IMovieRepository {
     if (popularMoviesResponse.isRight()) {
       final movieModelList =
           ((popularMoviesResponse as Right).value as List<MovieModel>);
-//Convierto de movieModel a movieEntity
+//convert de movieModel a movieEntity
       final List<Movie> popularMoviesList = movieModelList
           .map((movie) => Movie(
                 id: movie.id,
@@ -36,7 +36,7 @@ class MovieRepository implements IMovieRepository {
   }
 
   @override
-  Future<Either<Failure, MovieDetails>> getMovieDetails(String movieId) async {
+  Future<Either<Failure, MovieDetails>> getMovieDetails(int movieId) async {
     var response = await datasource.getMovieDetails(movieId);
     if (response.isRight()) {
       final movieDetailsModel =

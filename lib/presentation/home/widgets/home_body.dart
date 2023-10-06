@@ -1,7 +1,6 @@
 import 'package:codeberry_movies_test/presentation/home/bloc/movie_bloc.dart';
 import 'package:codeberry_movies_test/presentation/home/widgets/movie_card.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBody extends StatefulWidget {
@@ -20,12 +19,15 @@ class _HomeBodyState extends State<HomeBody> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context) / 100;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: BlocBuilder<MovieBloc, MovieState>(
         builder: (context, state) {
           return state.status == MovieStatus.loading
-              ? const Center(child: CupertinoActivityIndicator())
+              ? SizedBox(
+                  height: size.height * 100,
+                  child: const Center(child: CupertinoActivityIndicator()))
               : state.status == MovieStatus.success
                   ? Column(
                       children: [
@@ -53,9 +55,12 @@ class _HomeBodyState extends State<HomeBody> {
                         ),
                       ],
                     )
-                  : Center(
-                      child: Text(
-                        state.failure.toString(),
+                  : SizedBox(
+                      height: size.height * 100,
+                      child: Center(
+                        child: Text(
+                          state.failure.toString(),
+                        ),
                       ),
                     );
         },
