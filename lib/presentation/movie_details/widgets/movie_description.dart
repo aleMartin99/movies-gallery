@@ -83,7 +83,7 @@ class _MovieDescriptionState extends State<MovieDescription> {
                                     color: Colors.amberAccent,
                                   )),
                               Text(
-                                "\$${widget.movieDetails.voteAverage}",
+                                "${widget.movieDetails.voteAverage}",
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w600,
                                   color: kGreyTextColor,
